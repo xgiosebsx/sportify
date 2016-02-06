@@ -15,16 +15,19 @@
               %li.active
                 %a{:href => "#"}= t(".home")
               %li
-                %a{:href => "/events"}= t(".events")
+                %a{:href => events_path }= t(".events")
               %li
                 %a{:href => "#"}= t(".about_us")
               %li
                 %a{:href => "#"}= t(".contact")
-      .inner.cover
+      .inner.covery
         %h1.cover-heading= t(".demo_application")
         %p.lead= t(".demo_app_description")
         %p.lead
-          %a.btn.btn-lg.btn-primary{:href => new_user_session_path}= t(".sign_in")
+          - if user_signed_in?
+            %a.btn.btn-lg.btn-primary{:href => events_url}= t(".go_to_events")
+          - else
+            %a.btn.btn-lg.btn-primary{:href => new_user_session_path}= t(".sign_in")
       .mastfoot
         .inner
           %p
