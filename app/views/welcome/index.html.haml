@@ -4,7 +4,7 @@
     .cover-container
       .masthead.clearfix
         .inner
-          %h3.masthead-brand= t(".generic")
+          %h3.masthead-brand= t(".Sportify")
           %ul.nav.masthead-nav
             - if user_signed_in?
               %li
@@ -14,6 +14,8 @@
             - else
               %li.active
                 %a{:href => "#"}= t(".home")
+              %li
+                %a{:href => "/events"}= t(".events")
               %li
                 %a{:href => "#"}= t(".about_us")
               %li

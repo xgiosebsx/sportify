@@ -1,0 +1,26 @@
+#box
+  %p#notice
+    = notice
+  %p
+    %b Place:
+    = @event.place
+  %p
+    %b Time:
+    = @event.time
+  %p
+    %b Date:
+    = @event.date
+  %p
+    %b Sport:
+    = @event.sport
+  = link_to 'Edit', edit_event_path(@event)
+  \\|
+  \#{link_to 'Back', events_path}
+:css
+  #box{
+  	height: 200px;
+    width: 200px;
+    color: white;
+    background-color: #860505
+
+  }

@@ -1,0 +1,16 @@
+= simple_form_for(@event) do |f|
+  = f.error_notification
+
+  .form-horizontal
+    .form-group.form-inputs
+      %b.col-sm-2.control-label= t(".place")
+      .col-sm-10= f.input :place, label: false
+      %b.col-sm-2.control-label= t(".time")
+      .col-sm-10= f.input :time, label: false
+      %b.col-sm-2.control-label= t(".date")
+      .col-sm-10= f.input :date, label: false
+      %b.col-sm-2.control-label= t(".sport")
+      .col-sm-10= f.input :sport, label: false
+
+    .form-group.form-actions
+      .col-sm-offset-2.col-sm-10= f.button :submit

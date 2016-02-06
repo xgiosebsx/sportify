@@ -1,0 +1,28 @@
+.container
+  %h1 Listing events
+
+  %table.table.table-bordered.table-striped.table-responsive
+    %thead
+      %tr
+        %th Place
+        %th Time
+        %th Date
+        %th Sport
+        %th
+        %th
+        %th
+
+    %tbody
+      - @events.each do |event|
+        %tr
+          %td= event.place
+          %td= event.time
+          %td= event.date
+          %td= event.sport
+          %td= link_to 'Show', event
+          %td= link_to 'Edit', edit_event_path(event)
+          %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to(t(".new_events"), new_event_path, class: 'btn btn-xs btn-primary')

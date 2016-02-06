@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :events
+  resources :posts
+  resources :posts
+
+  get 'events/edit'
+
+  get 'events/list'
+
+  get 'events/index'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
