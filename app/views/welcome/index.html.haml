@@ -20,6 +20,7 @@
                 %a{:href => "#"}= t(".about_us")
               %li
                 %a{:href => "#"}= t(".contact")
+
       .inner.covery
         %h1.cover-heading= t(".demo_application")
         %p.lead= t(".demo_app_description")
@@ -30,7 +31,10 @@
             %a.btn.btn-lg.btn-primary{:href => new_user_session_path}= t(".sign_in")
       .mastfoot
         .inner
+          %a{:href => "/admins/sign_in/"}= t(".are_you_an_administrator?")
           %p
+
+
             = t(".all_rights_reserved")
             = succeed "," do
               %a.test-auto-prefixer{:href => "#"}= t(".generic")

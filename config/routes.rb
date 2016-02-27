@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  resources :places
+  resources :sports
+  get 'adminpanel/index', as: "perrito"
+
+  resources :adminpanels
+  devise_for :admins
   resources :events
   resources :posts
-  resources :posts
+
+  get 'admins/sign_in'
 
   get 'events/edit'
+
 
   get 'events/list'
 

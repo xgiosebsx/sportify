@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   # sets security-related headers automatically based on the configuration located on security_headers initializer
   # skip_before_filter :set_csp_header, :only => :tinymce_page
   ensure_security_headers
+
+  def after_sign_in_path_for(admin)
+    request.env['omniauth.origin'] || stored_location_for(admin) || perrito_path
+  end
 end

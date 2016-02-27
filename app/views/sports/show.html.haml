@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Sport:
+  = @sport.Sport
+
+= link_to 'Edit', edit_sport_path(@sport)
+\|
+= link_to 'Back', sports_path
