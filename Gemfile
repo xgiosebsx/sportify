@@ -62,9 +62,22 @@ group :development do
   gem 'rubycritic', require: false
   gem 'guard-rubycritic'
   gem 'brakeman-min', require: false
+
 end
 
+# Use Unicorn
+gem 'unicorn'
 
+
+group :development do
+  # Use Capistrano for deployment
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-unicorn-nginx', '~> 2.0'
+  gem 'capistrano-postgresql', '~> 3.0'
+end
 
 group :development, :test do
   gem 'jazz_hands', github: 'jkrmr/jazz_hands'
@@ -72,8 +85,9 @@ group :development, :test do
   # then list dotenv-rails in the Gemfile before those other gems and require dotenv/rails-now.
   # gem 'dotenv-rails', :require => 'dotenv/rails-now'
   # gem 'gem-that-requires-env-variables'
-  gem 'dotenv-rails'
 end
+
+gem 'dotenv-rails'
 
 group :test do
   gem 'simplecov'
